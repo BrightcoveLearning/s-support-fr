@@ -1,47 +1,26 @@
-<h1>{{ page.title }}</h1>
-<article class="bcls-article">
-  <summary>{{ page.summary }}</summary>
-  <section class="bcls-section">
-    <h2 id="Introduction">Introduction</h2>
-    <p>Wireshark is a popular open source application for analyzing network protocols in much greater depth than you can achieve through, for example, the Network portion of browser developer tools. This can be very valuable for diagnosing problems with internet applications such as the Brightcove Player or apps that interact with Brightcove through our APIs.</p>
-    <p>Even if your own knowledge of networks is not deep enough to fully understand the information you obtain from Wireshark, capturing the information can be of great help to Brightcove Support in diagnosing issues, and our Support representatives may ask if it is possible for you to capture network data from Wireshark so that they can better help you.</p>
-    <p>The steps below will walk you through the basic installation and use of Wireshark.</p>
-  </section>
-  <section class="bcls-section">
+<h1>{{page.title}}</h1> <article class="bcls-article"> <summary>{{page.summary}}</summary> <section class="bcls-section">
+    <h2 id="Introduction">Présentation</h2>
+    <p>Wireshark est une application open source populaire qui permet d'analyser les protocoles réseau de manière beaucoup plus approfondie que ce que vous pouvez obtenir, par exemple, via la partie Réseau des outils de développement de navigateur. Cela peut être très utile pour diagnostiquer les problèmes liés aux applications Internet telles que le lecteur Brightcove ou aux applications qui interagissent avec Brightcove via nos API.</p>
+    <p>Même si votre connaissance des réseaux n'est pas suffisamment approfondie pour bien comprendre les informations que vous obtenez de Wireshark, la capture des informations peut être d'une grande aide pour le support de Brightcove dans le diagnostic des problèmes, et nos représentants du support peuvent vous demander s'il est possible pour vous de capturer des données réseau à partir de Wireshark afin qu'ils puissent mieux vous aider.</p>
+    <p>Les étapes ci-dessous vous guideront tout au long de l'installation et de l'utilisation de base de Wireshark.</p>  </section><section class="bcls-section">
     <h2 id="installation">Installation</h2>
     <ol class="bcls-tasklist">
-      <li>If you do not already have Wireshark installed, go to <a href="https://www.wireshark.org/#download">https://www.wireshark.org/#download</a> and download the installer that matches your platform.</li>
-      <li>Run the installer. If you are presented with any options, install all available components. (Options vary by release and platform.)</li>
-    </ol>
-  </section>
-  <section class="bcls-section">
-    <h2 id="using_wireshark">Using Wireshark</h2>
-    <p><strong>Important:</strong> before beginning, it would be best to shut down as many applications that access the internet as possible (for example: email clients, IM or social media apps, Dropbox, Evernote, and other cloud-based storage apps). This will help minimize the "noise" of network transfers that are unrelated to the issue you are trying to diagnose.</p>
+      <li>Si Wireshark n'est pas déjà installé, rendez-vous sur<a href="https://www.wireshark.org/#download"> https://www.wireshark.org/#download</a> et téléchargez le programme d'installation correspondant à votre plate-forme.</li>
+      <li>Exécutez le programme d'installation. Si des options vous sont proposées, installez tous les composants disponibles. (Les options varient selon la version et la plateforme.)</li>
+    </ol>  </section><section class="bcls-section">
+    <h2 id="using_wireshark">Utiliser Wireshark</h2>
+    <p><strong>Important:</strong> avant de commencer, il est préférable de fermer autant d'applications qui accèdent à Internet que possible (par exemple: clients de messagerie, applications de messagerie instantanée ou de réseaux sociaux, Dropbox, Evernote et autres applications de stockage basées sur le cloud). Cela permettra de minimiser le bruit-fr/ des transferts réseau qui ne sont pas liés au problème que vous essayez de diagnostiquer.</p>
     <ol class="bcls-tasklist">
-      <li>Launch Wireshark.</li>
-      <li>Select a capture filter - the one you want will probably be showing most or at least a good portion of the traffic:
-        <figure class="bcls-figure"><img class="bcls-image" alt="Data Capture Filters" src="/assets/images/developer/wireshark-capture-filters.png" />
-          <figcaption class="bcls-caption--image">Data Capture Filters</figcaption>
-        </figure>
+      <li>Lancez Wireshark.</li>
+      <li>Sélectionnez un filtre de capture - celui que vous souhaitez affichera probablement la plus grande partie ou au moins une bonne partie du trafic: <figure class="bcls-figure"><img class="bcls-image" alt="Filtres de capture de données" src="/assets/images/developer/wireshark-capture-filters.png" /> <figcaption class="bcls-caption--image">Filtres de capture de données</figcaption> </figure>
       </li>
-      <li>Double-click on the filter you want to start capturing data:
-        <figure class="bcls-figure"><img class="bcls-image" alt="Capturing Data" src="/assets/images/developer/wireshark-capturing-data.png" />
-          <figcaption class="bcls-caption--image">Capturing Data</figcaption>
-        </figure>
+      <li>Double-cliquez sur le filtre dont vous souhaitez commencer à capturer les données: <figure class="bcls-figure"><img class="bcls-image" alt="Capture de données" src="/assets/images/developer/wireshark-capturing-data.png" /> <figcaption class="bcls-caption--image">Capture de données</figcaption> </figure>
       </li>
-      <li>With data capture running, recreate the problem you are trying to diagnose by loading the player, running the app, or whatever it is.</li>
-      <li>Once you have completed reproducing the problem, click the Stop Capturing Data button in Wireshark:
-        <figure class="bcls-figure"><img class="bcls-image" alt="Stop Capturing Data" src="/assets/images/developer/wireshark-stop-data capture.png" />
-          <figcaption class="bcls-caption--image">Stop Capturing Data</figcaption>
-        </figure>
+      <li>Avec la capture de données en cours d'exécution, recréez le problème que vous essayez de diagnostiquer en chargeant le lecteur, en exécutant l'application ou quoi que ce soit d'autre.</li>
+      <li>Une fois que vous avez terminé de reproduire le problème, cliquez sur le bouton Arrêter la capture de données dans Wireshark: <figure class="bcls-figure"><img class="bcls-image" alt="Arrêter de capturer des" src="/assets/images/developer/wireshark-stop-data capture.png" /> <figcaption class="bcls-caption--image">Arrêter de capturer des</figcaption> </figure>
       </li>
-      <li>Now, export the data from Wireshark by clicking the Save Capture File button:
-        <figure class="bcls-figure"><img class="bcls-image" alt="Save Capture File" src="/assets/images/developer/wireshark-save-capture-file.png" />
-          <figcaption class="bcls-caption--image">Save Capture File</figcaption>
-        </figure>
+      <li>Maintenant, exportez les données de Wireshark en cliquant sur le bouton Enregistrer le fichier de capture: <figure class="bcls-figure"><img class="bcls-image" alt="Enregistrer le fichier de capture" src="/assets/images/developer/wireshark-save-capture-file.png" /> <figcaption class="bcls-caption--image">Enregistrer le fichier de capture</figcaption> </figure>
       </li>
-      <li>Save the file in the default format on your machine.</li>
-      <li>Deliver the file to Brightcove Support in a support request that details the issue you are having.</li>
-    </ol>
-  </section>
-</article>
+      <li>Enregistrez le fichier au format par défaut sur votre ordinateur.</li>
+      <li>Envoyez le fichier au support Brightcove dans une demande d'assistance détaillant le problème que vous rencontrez.</li>
+    </ol>   </section></article>
